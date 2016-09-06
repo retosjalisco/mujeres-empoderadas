@@ -20,25 +20,21 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Bienes y Servicios", "BienesYServicios", "Home")</li>
-                    <li>@Html.ActionLink("Pre inscripción", "PreInscripcion", "Home")</li>
+                    <li>@Html.ActionLink("Mi perfil", "MiPerfil", "JefasDeFamilia")</li>
+                    <li>@Html.ActionLink("Chat", "Chat", "JefasDeFamilia")</li>
+                    <li>@Html.ActionLink("Convocatorias", "Convocatorias", "JefasDeFamilia")</li>
+                    <li>@Html.ActionLink("Bolsa de trabajo", "BolsaDeTrabajo", "JefasDeFamilia")</li>
+                    <li>@Html.ActionLink("Cursos y actividades", "CursosYActividades", "JefasDeFamilia")</li>
+                    <li>@Html.ActionLink("Contáctanos", "Contactanos", "JefasDeFamilia")</li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="container body-content">
-        <div class="row">
-            <div class="col-lg-9">
-                @RenderBody()
-            </div>
-            <div class="col-lg-3">
-                MEnu
-            </div>
-        </div>
+        @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mujeres Empoderadas</p>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
 
