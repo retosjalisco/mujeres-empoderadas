@@ -4,6 +4,7 @@ using System;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -82,7 +83,7 @@ namespace MujeresEmpoderadas.Controllers
                 if (JefaDeFamilia.esValido(login.CorreoElectronico, Utilidades.encriptarContrasena(login.Contrasenia)))
                 {
                     FormsAuthentication.SetAuthCookie(login.CorreoElectronico, false);
-                    return RedirectToAction("Index", "JefasDeFamilia");
+                    return RedirectToAction("MiPerfil", "Home");
                 }
                 else
                 {
@@ -90,6 +91,55 @@ namespace MujeresEmpoderadas.Controllers
                 }
             }
             return View(login);
+        }
+
+        [Authorize]
+        public ActionResult MiPerfil()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult Chat()
+        {
+            return View();
+        }
+
+        public ActionResult Convocatorias()
+        {
+            var convocatorias = db.Convocatorias;
+
+            return View(convocatorias.ToList());
+        }
+
+        public ActionResult DetalleConvocatoria(int? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            var data = db.Convocatorias.Find(id);
+            if (data == null)
+                return HttpNotFound();
+
+            return View(data);
+        }
+
+        [Authorize]
+        public ActionResult BolsaDeTrabajo()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult CursosYActividades()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult Contactanos()
+        {
+            return View();
         }
     }
 }

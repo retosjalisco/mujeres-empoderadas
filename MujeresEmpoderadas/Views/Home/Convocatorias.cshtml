@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MujeresEmpoderadas.Models.Convocatoria>
+
+@{
+    ViewBag.Title = "Convocatorias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Convocatorias</h1>
+<hr/>
+
+@foreach (var item in Model)
+{
+    <div class="convocatoria">
+        <img src="~/Content/Imagenes/Convocatorias/@item.Foto" alt="@item.Titulo" title="@item.Titulo" />
+        <h2><a href="/Home/DetalleCOnvocatoria/@item.ConvocatoriaId">@Html.DisplayFor(modelItem => item.Titulo)</a></h2>
+        <p>Del @item.FechaDeInicio.ToString("dd/MM/yyy") al @item.FechaDeFinalizacion.ToString("dd/MM/yyy")</p>
+        <p>@Html.DisplayFor(modelItem => item.Descripcion)</p>
+    </div>
+}

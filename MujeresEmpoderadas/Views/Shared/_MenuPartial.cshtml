@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Mi perfil", "MiPerfil", "Home")</li>
+        <li>@Html.ActionLink("Chat", "Chat", "Home")</li>
+        <li>@Html.ActionLink("Convocatorias", "Convocatorias", "Home")</li>
+        <li>@Html.ActionLink("Bolsa de trabajo", "BolsaDeTrabajo", "Home")</li>
+        <li>@Html.ActionLink("Cursos y actividades", "CursosYActividades", "Home")</li>
+        <li>@Html.ActionLink("Contáctanos", "Contactanos", "Home")</li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+        <li>@Html.ActionLink("Bienes y Servicios", "BienesYServicios", "Home")</li>
+        <li>@Html.ActionLink("Pre inscripción", "PreInscripcion", "Home")</li>
+    </ul>
+}

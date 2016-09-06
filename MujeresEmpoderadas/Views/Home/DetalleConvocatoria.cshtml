@@ -1,0 +1,13 @@
+﻿@model MujeresEmpoderadas.Models.Convocatoria
+
+@{
+    ViewBag.Title = "DetalleConvocatoria";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@Html.DisplayFor(model => model.Titulo)</h1>
+
+<div class="convocatoria">
+    <img src="~/Content/Imagenes/Convocatorias/@Model.Foto" alt="@Model.Titulo" title="@Model.Titulo" />
+    <p>@Html.DisplayFor(model => model.Descripcion)</p>
+</div>
