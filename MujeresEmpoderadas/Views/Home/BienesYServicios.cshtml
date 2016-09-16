@@ -5,9 +5,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div class="addthis_inline_share_toolbox"></div>
+
 <h2>Bienes y Servicios</h2>
 <h4>Aquí encontraras los bienes y servicios de las mujeres pertenecientes al programa.</h4>
 <hr/>
+
+@*@{ MujeresEmpoderadas.Models.CategoriaNegocio cat = (MujeresEmpoderadas.Models.CategoriaNegocio)int.Parse(Request.Params["q"]);}*@
+<h3>Categorías</h3>
+
+<form action="/Home/BienesYServicios/" method="GET">
+@Html.DropDownList("q",
+   EnumHelper.GetSelectList(typeof(MujeresEmpoderadas.Models.CategoriaNegocio)),
+   "Selecciona una categóría",
+   new { @class = "form-control", @onchange = "this.form.submit();" })
+</form>
+<br/>
 
 <div id="map"></div>
 
@@ -16,12 +29,16 @@
 
         function initMap() {
 
+            var iconBase = '/Content/Imagenes/map-icon.png';
+
+            var styles = [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}]
+
             var mapDiv = document.getElementById('map');
             var map = new google.maps.Map(mapDiv, {
                 center: { lat: 20.6282129, lng: -103.6223692 },
                 zoom: 8
             });
-
+            map.setOptions({styles: styles});
             var infowindow = new google.maps.InfoWindow({
                 content: ''
             });
@@ -32,12 +49,13 @@
             {
                 if (item.Negocio.Nombre != "")
                 {
-                    <text>
+                    if (Request.Params["q"] == null) {
+                        <text>
             {
-                position: {
-                    lat: @item.Negocio.Latitud,
+                        position: {
+                            lat: @item.Negocio.Latitud,
                     lng: @item.Negocio.Longitud
-                },
+                        },
                     contenido: '<div class="mapaContenido">'+
                   '<h1>@item.Negocio.Nombre</h1>'+
                   '<p>@item.Negocio.CategoriaNegocio</p>' +
@@ -46,6 +64,25 @@
                   '</div>'
             },
                     </text>
+                    } else { 
+                    MujeresEmpoderadas.Models.CategoriaNegocio busqueda = (MujeresEmpoderadas.Models.CategoriaNegocio)(int.Parse(Request.Params["q"]));
+                    if (item.Negocio.CategoriaNegocio == busqueda) {
+                    <text>
+            {
+                position: {
+                    lat: @item.Negocio.Latitud,
+                    lng: @item.Negocio.Longitud
+                    },
+                contenido: '<div class="mapaContenido">'+
+              '<h1>@item.Negocio.Nombre</h1>'+
+              '<p>@item.Negocio.CategoriaNegocio</p>' +
+              '<p>Dirección: @item.Negocio.Calle @item.Negocio.NoExterior, @item.Negocio.Colonia, @item.Negocio.Localidad</p>'+
+              '<p>Teléfono: @item.Negocio.Telefono </p>' +
+              '</div>'
+            },
+                    </text>
+                        }
+                    }
                 }
             }
 
@@ -55,7 +92,8 @@
                 var contenido = marcadores[i].contenido;
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(marcadores[i].position.lat, marcadores[i].position.lng),
-                    map: map
+                    map: map,
+                    icon: iconBase
                 });
                 (function (marker, contenido) {
                     google.maps.event.addListener(marker, 'click', function () {

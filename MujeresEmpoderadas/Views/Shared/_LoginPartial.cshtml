@@ -5,18 +5,18 @@
     {
         @Html.AntiForgeryToken()
 
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                @Html.ActionLink("Hola " + User.Identity.GetUserName() + "!", "Inicio", "Home", routeValues: null, htmlAttributes: new { title = "Manage" })
-            </li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">Cerrar Sesión</a></li>
-        </ul>
+        <div id="login" class="navbar-right">
+            <div id="user" style="background: none; !important"><img class="perfil-foto" style="margin-top: -14px; margin-left: 20px;" src="~/Content/Imagenes/Perfil/dulce-soto.jpg" /></div>
+            @Html.ActionLink("¡Hola " + User.Identity.GetUserName() + "!", "Inicio", "Home", routeValues: null, htmlAttributes: new { title = "Manage" })<br/>
+            <a href="javascript:document.getElementById('logoutForm').submit()">Cerrar Sesión</a>
+        </div>
     }
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Pre Inscripción", "PreInscripcion", "Home", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Iniciar sesíón", "IniciarSesion", "Home", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
+    <div id="login" class="navbar-right">
+        <div id="user"><i class="fa fa-user fa-5x" aria-hidden="true"></i></div>
+        <a href="/Home/IniciarSesion">Iniciar Sesión</a><br />
+        <a href="/Home/PreInscripcion">Pre inscripción al pograma</a>
+    </div>
 }

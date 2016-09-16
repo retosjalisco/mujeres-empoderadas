@@ -1,8 +1,7 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
+    background: #f5f5f5;
 }
-
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -25,8 +24,7 @@
     width: 100%;
     height: 400px;
     background-color: grey;
-
-
+    border: solid 1px #36506b;
 }
 .mapaContenido h1{
     font-size: 16px;
@@ -46,4 +44,160 @@
 
     .convocatoria p {
         text-align: justify;
+    }
+
+
+.navbar-inverse {
+    background-color: #3ec1c9;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    
+    color: #eb1e63;
+}
+
+a {
+    color: #fc5185;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #edecec;
+    background-color: #07949c;
+}
+
+p {
+    text-align: justify;
+}
+
+#logo-top {
+    height: 110px;
+    margin: 20px 0 0 0; 
+}
+
+#top-bar {
+    height: 150px;
+    background: #36506b;
+    background: url('Imagenes/fondo-patron.jpg');
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar {
+    min-height: 20px;
+
+}
+
+.navbar-inverse {
+    border: none;
+}
+
+#menu {
+    background-color: white;
+    min-height: 250px; 
+    border-left: solid 1px #edecec;     
+    padding-bottom: 50px;
+}
+
+    #menu img {
+        width: 100%;
+    }
+
+#contenido {
+    padding-right: 20px;
+    background-color: white;
+    padding-top: 15px;
+    min-height: 500px;
+    padding-bottom: 50px;
+}
+
+@media (min-width: 768px){
+    .navbar-nav > li > a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar {
+        border-radius: 0px;
+    }
+
+    .navbar-nav > li {
+        float: left;
+        border-left: 1px solid #07949c;
+    }
+}
+
+.li-final {
+    border-right: 1px solid #07949c;
+}
+
+
+.btn-default {
+    color: #d81c61;
+    background-color: #ffffff;
+    border-color: #cccccc;
+}
+
+#login {
+    text-align: center;
+    margin: 5px;
+}
+
+#user {
+    width: 100px;
+    height: 100px;
+    background: #3ec1c9;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 14px;
+    color: white;
+    margin-left: 31px;
+}
+
+    #login a {
+        color: white;
+    }
+
+footer p{
+    text-align: center;
+}
+
+.firma {
+    color: #cccccc;
+}
+
+.perfil-foto {
+    border-radius: 50%;
+    width: 100%;
+}
+.navbar {
+    margin-bottom: 0px;
+}
+
+.addthis_inline_share_toolbox{
+    float: right;
+    margin-top: 0px;
+}
+
+.list-group-item {
+    width: 100%;
+    text-align: left;
+}
+
+#sombra {
+    width: 100%;
+    height: 50px;
+    background: url('Imagenes/sombra-banner.png');
+    background-size: cover;
+}
+
+.mnu-seccion {
+    background-color: #3ec1c9;
+    padding: 10px;
+    text-align: center;
+}
+
+    .mnu-seccion h3 {
+        margin: 0px;
+        color: white;
     }

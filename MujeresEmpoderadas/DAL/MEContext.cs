@@ -1,4 +1,14 @@
-﻿using MujeresEmpoderadas.Models;
+﻿/**
+ * Mujeres Empoderadas
+ * 
+ * Desarrollado por Nicotina Estudio
+ * http://www.nicotinaestudio.com - hola@nicotinaestudio.mx
+ * 
+ * Creado por: Carlos Isaac Hernández Morfín.
+ * Fecha de creación: 05/09/2016
+ **/
+ 
+using MujeresEmpoderadas.Models;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 

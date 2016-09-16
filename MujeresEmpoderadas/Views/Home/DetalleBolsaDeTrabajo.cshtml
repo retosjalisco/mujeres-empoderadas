@@ -1,0 +1,33 @@
+﻿@model MujeresEmpoderadas.Models.Trabajo
+
+@{
+    ViewBag.Title = "Bolsa de trabajo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="addthis_inline_share_toolbox"></div>
+
+<h2>@Model.Titulo</h2>
+
+<h5>@Model.ContactoEmpresa</h5>
+<p>
+    <b>Datos de contacto:</b><br/>
+    @Model.ContactoNombre, @Model.ContactoTelefono, @Model.ContactoCorreoElectronico
+    </p>
+<hr />
+<p><b>Fecha de publicación:</b> @Model.FechaDePublicacion</p>
+<p><b>Salario:</b> @Model.Salario</p>
+<p><b>Descripción:</b></p>
+<p>@Model.Descripcion</p>
+    
+    
+    
+@Html.DisplayFor(model => model.Salario)
+    
+@Html.DisplayFor(model => model.ContactoNombre)
+    
+@Html.DisplayFor(model => model.ContactoTelefono)
+    
+@Html.DisplayFor(model => model.ContactoCorreoElectronico)
+    
+@Html.DisplayFor(model => model.ContactoEmpresa)

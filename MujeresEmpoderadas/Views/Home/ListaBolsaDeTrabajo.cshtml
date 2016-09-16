@@ -1,0 +1,13 @@
+﻿@model IEnumerable<MujeresEmpoderadas.Models.Trabajo>
+
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a href="/Home/DetalleBolsaDeTrabajo/@item.TrabajoId" class="list-group-item">
+            @item.Titulo - @item.ContactoEmpresa<br />
+            Salario: @item.Salario
+        </a>
+    }
+</div>
+
+<a href="/Home/BolsaDeTrabajo/">Ver todos los trabajos &raquo;</a>

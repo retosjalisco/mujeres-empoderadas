@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MujeresEmpoderadas.Models.Trabajo>
+
+@{
+    ViewBag.Title = "BolsaDeTrabajo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="addthis_inline_share_toolbox"></div>
+
+<h1>Bolsa de trabajo</h1>
+<hr />
+
+@foreach (var item in Model)
+{
+    <div class="convocatoria">
+        <h2><a href="/Home/DetalleBolsaDeTrabajo/@item.TrabajoId">@Html.DisplayFor(modelItem => item.Titulo)</a></h2>
+        <p><strong>Empresa:</strong> @item.ContactoEmpresa, 
+        <strong>Fecha de publicación:</strong> @item.FechaDePublicacion.ToString("dd/MM/yyy")
+        <strong>Salario:</strong> @string.Format("{0:C}", item.Salario)</p>
+        <p>@Html.DisplayFor(modelItem => item.Descripcion)</p>
+    </div>
+    <hr/>
+}

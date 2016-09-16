@@ -6,6 +6,14 @@ namespace MujeresEmpoderadas
 {
     public class Utilidades
     {
+        public static bool esAdmin(string correoElectronico)
+        {
+            if (correoElectronico == "admin@mujeresempoderadas.com")
+                return true;
+            else
+                return false;
+        }
+
         public static void Log(string mensaje)
         {
             Console.WriteLine(mensaje);

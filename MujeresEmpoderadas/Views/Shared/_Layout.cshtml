@@ -3,12 +3,23 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Mujeres Empoderadas</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div id="top-bar">
+        <div class="container">
+            <div class="row">
+                <a href="/"><img id="logo-top" src="~/Content/Imagenes/logo-mujeres.png" /></a>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -16,31 +27,55 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 @Html.Partial("_MenuPartial")
-                @Html.Partial("_LoginPartial")
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="fa fa-facebook fa-2x" href="https://www.facebook.com/nicotinaestudio" target="_blank"></a></li>
+                    <li><a class="fa fa-twitter fa-2x li-final" href="https://twitter.com/NicotinaEstudio" target="_blank"></a></li>
+                </ul>
             </div>
         </div>
     </div>
     <div class="container body-content">
         <div class="row">
-            <div class="col-lg-9">
+            <div id="contenido" class="col-lg-9">
                 @RenderBody()
             </div>
-            <div class="col-lg-3">
-                MEnu
-            </div>
+            <div id="menu" class="col-lg-3">
+                <img src="~/Content/Imagenes/Banners/logoijm.gif" />
+                <h4>Instituto Jaliciense de las Mujeres</h4>
+                <p>Encargados de disenar, promover y evaluar politicas publicas para impulsar la equidad entre mujeres y hombres</p>
+                <p><a href="#">Leer más  &raquo;</a></p>
+                <hr/>
+                
+                <div class="mnu-seccion">
+                    <h3><i class="fa fa-calendar" aria-hidden="true"></i> Próximos eventos</h3>
+                </div>
+
+                @{Html.RenderAction("ListaEventos");}
+
+                <hr/>
+                <div class="mnu-seccion">
+                    <h3><i class="fa fa-suitcase" aria-hidden="true"></i> Bolsa de tabajo</h3>
+                </div>
+                @{Html.RenderAction("ListaBolsaDeTrabajo");}
+                </div>
         </div>
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mujeres Empoderadas</p>
+            <p><img src="~/Content/Imagenes/logo-gobierno-jalisco.png" /></p>
+            <p>&copy; @DateTime.Now.Year - Mujeres Empoderadas, todos los derechos reservados.</p>
+            <p><a href="/Home/PoliticasPrivacidad">Politicas de privacidad</a> | <a href="/Home/MapaSitio">Mapa del sitio</a> | <a href="#">contacto@mujeresempoderadas.com</a></p>
+            <p class="firma">Desarrollado por: <a href="http://nicotinaestudio.com" target="_blank">Nicotina Estudio</a></p>
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57d9a9f8696d6052"></script>
 </body>
 </html>

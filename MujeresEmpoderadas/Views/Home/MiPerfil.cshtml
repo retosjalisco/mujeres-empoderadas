@@ -1,9 +1,57 @@
-﻿
+﻿@model MujeresEmpoderadas.Models.JefaDeFamilia
+
 @{
     ViewBag.Title = "MiPerfil";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Mi Perfil</h2>
-<h4>¡Bienvenida!</h4>
+<h2>Mi perfil</h2>
+<h4>¡Bienvenida @Model.Nombre @Model.PrimerApellido @Model.SegundoApellido!</h4>
 <hr/>
+
+<div class="row">
+    <div class="col-md-4">
+        <img class="perfil-foto" src="~/Content/Imagenes/Perfil/dulce-soto.jpg" />
+    </div>
+    <div class="col-md-8">
+
+        <div class="addthis_inline_share_toolbox"></div>
+
+        <h3>@Model.Nombre @Model.PrimerApellido @Model.SegundoApellido</h3>
+        <h6><b>Estatus:</b> Activo</h6>
+        <h6><b>Fecha de registro al programa:</b> @Model.FechaDeRegistro</h6>
+        <p><b>Edad:</b> @Model.NacimFecha <b>Teléfono:</b> @Model.TelefonoMovil</p>
+        <p><b>Correo electrónico:</b> @Model.CorreoElectronico</p>
+        <p><b>Domicilio:</b></p>
+        <p>@Model.Calle @Model.Colonia, @Model.Municipio, @Model.Localidad</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Notificaciones</h3>
+        <hr />
+        <p>No tiene notificaciones</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Mi historia de vida</h3>
+        <hr />
+        @Model.HistoriaDeVida
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Mis cursos</h3>
+        <hr />
+        Aún no tienes cursos registrados.
+    </div>
+</div>
+
+@section Scripts {
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+}

@@ -1,8 +1,16 @@
-﻿using MujeresEmpoderadas.DAL;
+﻿/**
+ * Mujeres Empoderadas
+ * 
+ * Desarrollado por Nicotina Estudio
+ * http://www.nicotinaestudio.com - hola@nicotinaestudio.mx
+ * 
+ * Creado por: Carlos Isaac Hernández Morfín.
+ * Fecha de creación: 05/09/2016
+ **/
+ 
+using MujeresEmpoderadas.DAL;
 using MujeresEmpoderadas.Models;
 using System;
-using System.Data.Entity.Validation;
-using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -19,7 +27,12 @@ namespace MujeresEmpoderadas.Controllers
             return View();
         }
 
-        public ActionResult BienesYServicios()
+        public ActionResult Categorias()
+        {
+            return View();
+        }
+
+        public ActionResult BienesYServicios(int? q)
         {
             var jefasdeFamilia = db.JefasDeFamilia;
             return View(jefasdeFamilia.ToList());
@@ -70,13 +83,15 @@ namespace MujeresEmpoderadas.Controllers
         }
         #endregion
 
+        #region LOGIN
+
         public ActionResult IniciarSesion()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult IniciarSesion([Bind(Include = "CorreoElectronico, Contrasena")]Login login)
+        public ActionResult IniciarSesion([Bind(Include = "CorreoElectronico, Contrasenia")]Login login)
         {
             if (ModelState.IsValid)
             {
@@ -93,13 +108,21 @@ namespace MujeresEmpoderadas.Controllers
             return View(login);
         }
 
+        public ActionResult CerrarSesion()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
+        }
+
+        #endregion
+
         [Authorize]
         public ActionResult MiPerfil()
         {
-            return View();
+            var jefaDeFamilia = db.JefasDeFamilia.Where(x => x.Nombre == "Dulce María").FirstOrDefault();
+            return View(jefaDeFamilia);
         }
 
-        [Authorize]
         public ActionResult Chat()
         {
             return View();
@@ -111,6 +134,38 @@ namespace MujeresEmpoderadas.Controllers
 
             return View(convocatorias.ToList());
         }
+
+
+        #region Bolsa de trabajo
+
+        public ActionResult BolsaDeTrabajo()
+        {
+            var trabajos = db.Trabajos;
+
+            return View(trabajos.ToList());
+        }
+
+        public ActionResult DetalleBolsaDeTrabajo(int? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            var data = db.Trabajos.Find(id);
+            if (data == null)
+                return HttpNotFound();
+
+            return View(data);
+        }
+
+        [ChildActionOnly]
+        public ActionResult ListaBolsaDeTrabajo()
+        {
+            var trabajos = db.Trabajos.Take(3);
+
+            return PartialView(trabajos.ToList());
+        }
+
+        #endregion
 
         public ActionResult DetalleConvocatoria(int? id)
         {
@@ -124,20 +179,41 @@ namespace MujeresEmpoderadas.Controllers
             return View(data);
         }
 
-        [Authorize]
-        public ActionResult BolsaDeTrabajo()
-        {
-            return View();
-        }
-
-        [Authorize]
         public ActionResult CursosYActividades()
         {
             return View();
         }
 
-        [Authorize]
+        [ChildActionOnly]
+        public ActionResult ListaEventos()
+        {
+            var data = db.Convocatorias.Take(3);
+
+            return PartialView(data.ToList());
+        }
+
         public ActionResult Contactanos()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Contactanos(Contactanos contacto)
+        {
+            return RedirectToAction("Gracias");
+        }
+
+        public ActionResult Gracias()
+        {
+            return View();
+        }
+
+        public ActionResult PoliticasPrivacidad()
+        {
+            return View();
+        }
+
+        public ActionResult MapaSitio()
         {
             return View();
         }

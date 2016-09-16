@@ -1,0 +1,12 @@
+﻿@model IEnumerable<MujeresEmpoderadas.Models.Convocatoria>
+
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a href="/Home/DetalleConvocatoria/@item.ConvocatoriaId" class="list-group-item">
+            @item.Titulo
+        </a>
+    }
+</div>
+
+<a href="/Home/Convocatorias/">Ver todos los eventos &raquo;</a>

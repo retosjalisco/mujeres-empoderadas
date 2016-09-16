@@ -1,4 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿/**
+ * Mujeres Empoderadas
+ * 
+ * Desarrollado por Nicotina Estudio
+ * http://www.nicotinaestudio.com - hola@nicotinaestudio.mx
+ * 
+ * Creado por: Carlos Isaac Hernández Morfín.
+ * Fecha de creación: 05/09/2016
+ **/
+ 
+using System.ComponentModel.DataAnnotations;
 
 namespace MujeresEmpoderadas.Models
 {
@@ -29,11 +39,11 @@ namespace MujeresEmpoderadas.Models
         CostaSierraOccidental, Valles, Lagunas, Centro };
 
     public enum CategoriaNegocio {
-        Esteticas,
-        Tortilleria,
+        Esteticas = 0,
+        Tortilleria = 1,
         [Display(Name = "Cocina económica")]
-        CocinaEconómica,
-        Abarrotes,
-        Restaurante
+        CocinaEconómica = 2,
+        Abarrotes = 3,
+        Restaurante = 4
     };
 }
