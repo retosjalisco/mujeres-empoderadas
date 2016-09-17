@@ -37,6 +37,7 @@ namespace MujeresEmpoderadas.Models
         [ScaffoldColumn(false)]
         public bool EsBeneficiario { get; set; }
 
+        [Display(Name = "Región")]
         public Region Region { get; set; }
 
         [DataType(DataType.MultilineText)]
@@ -127,7 +128,7 @@ namespace MujeresEmpoderadas.Models
 
         [DataType(DataType.Text)]
         [StringLength(100)]
-        [Display(Name = "Correo electrónico de contacto")]
+        [Display(Name = "Correo electrónico")]
         [Required()]
         public string CorreoElectronico { get; set; }
 

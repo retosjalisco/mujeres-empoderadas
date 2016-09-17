@@ -12,11 +12,10 @@
 <h5>@Model.ContactoEmpresa</h5>
 <p>
     <b>Datos de contacto:</b><br/>
-    @Model.ContactoNombre, @Model.ContactoTelefono, @Model.ContactoCorreoElectronico
+    Nombre: @Model.ContactoNombre, Teléfono: @Model.ContactoTelefono, Correo electrónico: <a href="mailto:@Model.ContactoCorreoElectronico">@Model.ContactoCorreoElectronico</a>
     </p>
-<hr />
 <p><b>Fecha de publicación:</b> @Model.FechaDePublicacion</p>
-<p><b>Salario:</b> @Model.Salario</p>
+<p><b>Salario:</b> @string.Format("{0:C}", Model.Salario)</p>
 <p><b>Descripción:</b></p>
 <p>@Model.Descripcion</p>
     

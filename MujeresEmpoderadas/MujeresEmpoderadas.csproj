@@ -196,6 +196,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Imagenes\Banners\logoijm.gif" />
+    <Content Include="Content\Imagenes\Convocatorias\heforshe.jpg" />
+    <Content Include="Content\Imagenes\Convocatorias\semov.jpg" />
     <Content Include="Content\Imagenes\Convocatorias\ijm.jpg" />
     <Content Include="Content\Imagenes\fondo-patron.jpg" />
     <Content Include="Content\Imagenes\logo-gobierno-jalisco.png" />
@@ -4324,6 +4326,7 @@
     <Content Include="Content\vendors\transitionize\package.json" />
     <Content Include="Content\vendors\validator\README.md" />
     <Content Include="Content\vendors\validator\validator.jquery.json" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

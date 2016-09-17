@@ -15,7 +15,9 @@
     <div class="convocatoria">
         <img src="~/Content/Imagenes/Convocatorias/@item.Foto" alt="@item.Titulo" title="@item.Titulo" />
         <h2><a href="/Home/DetalleConvocatoria/@item.ConvocatoriaId">@Html.DisplayFor(modelItem => item.Titulo)</a></h2>
-        <p>Del @item.FechaDeInicio.ToString("dd/MM/yyy") al @item.FechaDeFinalizacion.ToString("dd/MM/yyy")</p>
+        <p><strong>Del @item.FechaDeInicio.ToString("dd/MM/yyy") al @item.FechaDeFinalizacion.ToString("dd/MM/yyy")</strong></p>
         <p>@Html.DisplayFor(modelItem => item.Descripcion)</p>
+        <p style="text-align: right"><a href="/Home/DetalleConvocatoria/@item.ConvocatoriaId">Ver más &raquo;</a></p>
     </div>
+    <hr />
 }

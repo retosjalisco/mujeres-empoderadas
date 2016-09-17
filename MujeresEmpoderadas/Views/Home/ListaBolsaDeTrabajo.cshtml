@@ -5,7 +5,7 @@
     {
         <a href="/Home/DetalleBolsaDeTrabajo/@item.TrabajoId" class="list-group-item">
             @item.Titulo - @item.ContactoEmpresa<br />
-            Salario: @item.Salario
+            Salario: @string.Format("{0:C}", item.Salario)
         </a>
     }
 </div>

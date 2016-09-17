@@ -12,12 +12,14 @@
 
 @foreach (var item in Model)
 {
-    <div class="convocatoria">
+    <div class="convocatoria clear">
         <h2><a href="/Home/DetalleBolsaDeTrabajo/@item.TrabajoId">@Html.DisplayFor(modelItem => item.Titulo)</a></h2>
-        <p><strong>Empresa:</strong> @item.ContactoEmpresa, 
-        <strong>Fecha de publicación:</strong> @item.FechaDePublicacion.ToString("dd/MM/yyy")
-        <strong>Salario:</strong> @string.Format("{0:C}", item.Salario)</p>
+        <p> 
+            <strong>Fecha de publicación:</strong> @item.FechaDePublicacion.ToString("dd/MM/yyy")
+            <strong>Salario:</strong> @string.Format("{0:C}", item.Salario),
+            <strong>Empresa:</strong> @item.ContactoEmpresa</p>
         <p>@Html.DisplayFor(modelItem => item.Descripcion)</p>
+        <p style="text-align: right"><a href="/Home/DetalleBolsaDeTrabajo/@item.TrabajoId">Ver más &raquo;</a></p>
     </div>
     <hr/>
 }
