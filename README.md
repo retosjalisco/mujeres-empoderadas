@@ -17,7 +17,8 @@ Se busca el desarrollo de una herramienta que permita establecer un mejor contro
 Clonar el repositorio en su computadora, abrir el archivo **MujeresEmpoderadas.sln** con Visual Studio
 
 Para ejecutar de forma local:
-- Cambiar la caneda de conexión a la base de datos en el archiv Web.config
+
+- Cambiar la cadena de conexión en el archivo **Web.config** y apuntarlo al servidor local de SQLServer
 - Desde Visual Studio ejecutar: Debug -> Start Without Debugging
 
 ##Screenshots
@@ -40,11 +41,11 @@ Si usted tiene cualquier duda o pregunta, nos puede contactar por correo <hola@n
 
 **Nuestra Misión**
 
-> *Ofrecemos soluciones tecnológicas que permiten a las empresas digitalizar y mejorar sus procesos institucionales mediante la incorporación de tecnologías modernas, creativas e innovadoras.. [Nicotina Estudio](http://www.nicotinaestudio.com)*
+> *Ofrecemos soluciones tecnológicas que permiten a las empresas digitalizar y mejorar sus procesos institucionales mediante la incorporación de tecnologías modernas, creativas e innovadoras... [Nicotina Estudio](http://www.nicotinaestudio.com)*
 
 ##Licencia
 
-Copyright 2014 Nicotina Estudio
+Copyright 2016 Nicotina Estudio
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
