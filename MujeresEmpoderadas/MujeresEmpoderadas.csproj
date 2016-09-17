@@ -196,6 +196,12 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Imagenes\Banners\logoijm.gif" />
+    <Content Include="Content\Imagenes\Capturas\me-bienes-y-servicios.jpg" />
+    <Content Include="Content\Imagenes\Capturas\me-bolsa-de-trabajo.jpg" />
+    <Content Include="Content\Imagenes\Capturas\me-convocatorias.jpg" />
+    <Content Include="Content\Imagenes\Capturas\me-perfil.jpg" />
+    <Content Include="Content\Imagenes\Capturas\me-portada.jpg" />
+    <Content Include="Content\Imagenes\Capturas\me-preinscripcion.jpg" />
     <Content Include="Content\Imagenes\Convocatorias\heforshe.jpg" />
     <Content Include="Content\Imagenes\Convocatorias\semov.jpg" />
     <Content Include="Content\Imagenes\Convocatorias\ijm.jpg" />
