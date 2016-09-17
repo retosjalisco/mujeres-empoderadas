@@ -1,0 +1,327 @@
+﻿@model MujeresEmpoderadas.Models.JefaDeFamilia
+
+@{
+    ViewBag.Title = "DetalleBeneficiarias";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Detalle de beneficiaria</h2>
+
+<div>
+    <h4>Detalle del usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Region)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Region)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HistoriaDeVida)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.HistoriaDeVida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrimerApellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrimerApellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SegundoApellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SegundoApellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoExterior)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoExterior)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoInterior)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoInterior)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Colonia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Colonia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EntreLasCalles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EntreLasCalles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Municipio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Municipio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Localidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Localidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NacimEstado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NacimEstado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NacimMunicipio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NacimMunicipio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NacimFecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NacimFecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoFijo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoFijo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoMovil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoMovil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CorreoElectronico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CorreoElectronico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Escolaridad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Escolaridad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoCivil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadoCivil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EsMexicano)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EsMexicano)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentidadOtro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdentidadOtro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CURP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CURP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IFE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IFE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pasaporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pasaporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EsIndigena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EsIndigena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComunidadOrigen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComunidadOrigen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HablaDialectoIndigena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HablaDialectoIndigena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QueDialectoHabla)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QueDialectoHabla)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoPersonasVivenVivienda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoPersonasVivenVivienda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoDormitoriosVivienda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoDormitoriosVivienda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EsDiscapacitado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EsDiscapacitado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Discapacidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discapacidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiscapacidadMotivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiscapacidadMotivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AcreditaDiscapacidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcreditaDiscapacidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotivoNoAcreditaDiscapacidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotivoNoAcreditaDiscapacidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstanciaAcreditaDiscapacidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstanciaAcreditaDiscapacidad)
+        </dd>
+
+    </dl>
+</div>

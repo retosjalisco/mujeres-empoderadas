@@ -1,5 +1,16 @@
-﻿using Microsoft.AspNet.Identity;
+﻿/**
+ * Mujeres Empoderadas
+ * 
+ * Desarrollado por Nicotina Estudio
+ * http://www.nicotinaestudio.com - hola@nicotinaestudio.mx
+ * 
+ * Creado por: Carlos Isaac Hernández Morfín.
+ * Fecha de creación: 05/09/2016
+ **/
+
+using MujeresEmpoderadas.DAL;
 using MujeresEmpoderadas.Models;
+using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -7,6 +18,7 @@ namespace MujeresEmpoderadas.Controllers
 {
     public class AdminController : Controller
     {
+        private MEContext db = new MEContext();
         public ActionResult Login()
         {
             return View();
@@ -36,17 +48,28 @@ namespace MujeresEmpoderadas.Controllers
             return RedirectToAction("index", "home");
         }
 
-        [Authorize]
         public ActionResult Index()
         {
-            if (!Request.IsAuthenticated)
-                return RedirectToAction("Login", "Admin");
+            //if (!Request.IsAuthenticated)
+            //    return RedirectToAction("Login", "Admin");
 
-            // Valida admin
-            if (!Utilidades.esAdmin(User.Identity.GetUserName()))
-                return RedirectToAction("Login", "Admin");
+            //Valida admin
+            //if (!Utilidades.esAdmin(User.Identity.GetUserName()))
+            //    return RedirectToAction("Login", "Admin");
 
             return View();
+        }
+
+        public ActionResult Beneficiarias()
+        {
+            var jefasDeFamilia = db.JefasDeFamilia;
+            return View(jefasDeFamilia.ToList());
+        }
+
+        public ActionResult DetalleBeneficiarias(int? id)
+        {
+            var jefaDeFamiia = db.JefasDeFamilia.Find(id);
+            return View(jefaDeFamiia);
         }
     }
 }
