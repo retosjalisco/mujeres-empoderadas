@@ -10,9 +10,11 @@
 
 using MujeresEmpoderadas.DAL;
 using MujeresEmpoderadas.Models;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
+using Twilio;
 
 namespace MujeresEmpoderadas.Controllers
 {
@@ -70,6 +72,45 @@ namespace MujeresEmpoderadas.Controllers
         {
             var jefaDeFamiia = db.JefasDeFamilia.Find(id);
             return View(jefaDeFamiia);
+        }
+
+        public ActionResult EnviarSMS()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult EnviarSMS(SMS sms)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            try
+            {
+                //TODO: Enviar SMS Twilio
+                string AccountSid = "ACabc613041a9c936f847565f3c37fdbe1";
+                string AuthToken = "45c8f2c931bace2a48aa4f6313cac137";
+
+                var twilio = new TwilioRestClient(AccountSid, AuthToken);
+
+                var message = twilio.SendMessage(
+                    "+12016769431", "+524433632200",
+                    sms.Mensaje
+                );
+            }
+            catch (Exception ex) {
+
+                Utilidades.Log(ex.Message);
+            }
+
+            return RedirectToAction("EnviarSMSEnviado");
+        }
+
+        public ActionResult EnviarSMSEnviado()
+        {
+            return View();
         }
     }
 }

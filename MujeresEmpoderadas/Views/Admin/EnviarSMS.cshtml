@@ -1,0 +1,22 @@
+﻿@model MujeresEmpoderadas.Models.SMS
+
+
+@{
+    ViewBag.Title = "EnviarSMS";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Enviar SMS</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        <textarea id="Mensaje" name="Mensaje" class="form-control" rows="3" placeholder="Mensaje"></textarea>
+        @Html.ValidationMessageFor(model => model.Mensaje, "", new { @class = "text-danger" })
+    </div>
+
+    <input type="submit" value="Enviar" class="btn btn-default" />
+}

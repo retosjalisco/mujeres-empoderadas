@@ -28,11 +28,18 @@ Para ejecutar de forma local:
 ![alt tag](http://me.nicotinaestudio.com/Content/Imagenes/Capturas/me-bolsa-de-trabajo.jpg)
 ![alt tag](http://me.nicotinaestudio.com/Content/Imagenes/Capturas/me-convocatorias.jpg)
 ![alt tag](http://me.nicotinaestudio.com/Content/Imagenes/Capturas/me-preinscripcion.jpg)
+![alt tag](http://me.nicotinaestudio.com/Content/Imagenes/Capturas/me-admin-home.jpg)
+![alt tag](http://me.nicotinaestudio.com/Content/Imagenes/Capturas/me-admin-usuarios.jpg)
+![alt tag](http://me.nicotinaestudio.com/Content/Imagenes/Capturas/me-admin-sms.jpg)
+![alt tag](http://me.nicotinaestudio.com/Content/Imagenes/Capturas/me-admin-sms-recepcion.jpg)
 
 ##Demo
 - [http://me.nicotinaestudio.com](http://me.nicotinaestudio.com)
 - Usuario: dsoto@nicotinaestudio.mx
 - Contraseña: 123
+
+##Panel de administración
+- [http://me.nicotinaestudio.com/Admin](http://me.nicotinaestudio.com/Admin)
 
 ##¿Preguntas o problemas? 
 Si usted tiene cualquier duda o pregunta, nos puede contactar por correo <hola@nicotinaestudio.mx>.
